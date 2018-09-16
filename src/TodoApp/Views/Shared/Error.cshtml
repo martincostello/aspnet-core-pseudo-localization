@@ -1,0 +1,12 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = Resources.ErrorTitle;
+}
+<h1 class="text-danger">@Resources.ErrorHeading</h1>
+<h2 class="text-danger">@Resources.ErrorSubheading</h2>
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>@Resources.ErrorRequestId</strong> <code>@Model.RequestId</code>
+    </p>
+}

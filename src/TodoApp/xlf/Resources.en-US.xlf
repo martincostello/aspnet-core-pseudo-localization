@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="en-US" original="../Resources.resx">
+    <body>
+      <trans-unit id="ApplicationName">
+        <source>TodoApp</source>
+        <target state="final">TodoApp</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="PageTitleFormat">
+        <source>{0} - {1}</source>
+        <target state="final">{0} - {1}</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Copyright">
+        <source>© {0:yyyy} - {1}</source>
+        <target state="final">© {0:yyyy} - {1}</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavListText">
+        <source>My List</source>
+        <target state="final">My List</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavListTitle">
+        <source>My TODO List</source>
+        <target state="final">My TODO List</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ToggleNavigationAriaLabel">
+        <source>Toggle navigation</source>
+        <target state="final">Toggle navigation</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="AddItemButton">
+        <source>Add</source>
+        <target state="final">Add</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="AddItemHeading">
+        <source>Add New Item</source>
+        <target state="final">Add New Item</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="AddItemLabel">
+        <source>Thing to do</source>
+        <target state="final">Thing to do</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="AddItemPlaceholder">
+        <source>Buy eggs 🥚</source>
+        <target state="final">Buy eggs 🥚</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="CompleteItemButton">
+        <source>Done</source>
+        <target state="final">Done</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="CompleteItemLabel">
+        <source>Mark this item as done.</source>
+        <target state="final">Mark this item as done.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="DeleteItemButton">
+        <source>Delete</source>
+        <target state="final">Delete</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="DeleteItemLabel">
+        <source>Delete this item from the list.</source>
+        <target state="final">Delete this item from the list.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ErrorHeading">
+        <source>Error.</source>
+        <target state="final">Error.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ErrorRequestId">
+        <source>Request ID:</source>
+        <target state="final">Request ID:</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ErrorSubheading">
+        <source>An error occurred while processing your request.</source>
+        <target state="final">An error occurred while processing your request.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ErrorTitle">
+        <source>Error</source>
+        <target state="final">Error</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListColumn1">
+        <source>Item</source>
+        <target state="final">Item</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListColumn2">
+        <source>Last Updated</source>
+        <target state="final">Last Updated</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListCompleted">
+        <source>Relax - You've done everything! 🌈</source>
+        <target state="final">Relax - You've done everything! 🌈</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListHeading">
+        <source>Things To Do</source>
+        <target state="final">Things To Do</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListSubheading">
+        <source>My List</source>
+        <target state="final">My List</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListTitle">
+        <source>My List</source>
+        <target state="final">My List</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="SwitchLanguage">
+        <source>Switch Language</source>
+        <target state="final">Switch Language</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

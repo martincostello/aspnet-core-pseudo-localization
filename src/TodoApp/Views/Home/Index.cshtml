@@ -1,0 +1,41 @@
+@model TodoListViewModel
+@{
+    ViewData["Title"] = Resources.ListTitle;
+}
+<h1>@Resources.ListHeading</h1>
+<p>
+    <em>@DateTime.UtcNow.ToLongDateString()</em>
+</p>
+<hr />
+@if (Model.Items.Count == 0)
+{
+    <div class="alert alert-success lead" role="alert">
+        @Resources.ListCompleted
+    </div>
+}
+else
+{
+    <h2>
+        @Resources.ListSubheading
+    </h2>
+    <div>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th class="w-50" scope="col">@Resources.ListColumn1</th>
+                    <th class="w-25" scope="col">@Resources.ListColumn2</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    <partial name="_ViewItem" model="item" />
+                }
+            </tbody>
+        </table>
+    </div>
+}
+<hr/>
+<partial name="_AddItem" />

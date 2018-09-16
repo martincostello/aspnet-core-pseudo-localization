@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="de-DE" original="../Resources.resx">
+    <body>
+      <trans-unit id="AddItemButton">
+        <source>Add</source>
+        <target state="needs-review-translation">Addieren</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="AddItemHeading">
+        <source>Add New Item</source>
+        <target state="needs-review-translation">Füge neuen Gegenstand hinzu</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="AddItemLabel">
+        <source>Thing to do</source>
+        <target state="needs-review-translation">Etwas zu tun</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="AddItemPlaceholder">
+        <source>Buy eggs 🥚</source>
+        <target state="needs-review-translation">Kaufen Sie Eier 🥚</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ApplicationName">
+        <source>TodoApp</source>
+        <target state="final">TodoApp</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="CompleteItemButton">
+        <source>Done</source>
+        <target state="needs-review-translation">Erledigt</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="CompleteItemLabel">
+        <source>Mark this item as done.</source>
+        <target state="needs-review-translation">Markiere diesen Artikel als erledigt.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Copyright">
+        <source>© {0:yyyy} - {1}</source>
+        <target state="final">© {0:yyyy} - {1}</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="DeleteItemButton">
+        <source>Delete</source>
+        <target state="needs-review-translation">Löschen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="DeleteItemLabel">
+        <source>Delete this item from the list.</source>
+        <target state="needs-review-translation">Löschen Sie diesen Eintrag aus der Liste.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ErrorHeading">
+        <source>Error.</source>
+        <target state="needs-review-translation">Fehler.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ErrorRequestId">
+        <source>Request ID:</source>
+        <target state="needs-review-translation">Anfrage ID:</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ErrorSubheading">
+        <source>An error occurred while processing your request.</source>
+        <target state="needs-review-translation">Während Ihrer Anfrage ist ein Fehler aufgetreten.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ErrorTitle">
+        <source>Error</source>
+        <target state="needs-review-translation">Fehler</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListColumn1">
+        <source>Item</source>
+        <target state="needs-review-translation">Artikel</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListColumn2">
+        <source>Last Updated</source>
+        <target state="needs-review-translation">Letzte Aktualisierung</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListCompleted">
+        <source>Relax - You've done everything! 🌈</source>
+        <target state="needs-review-translation">Entspannen Sie sich - Sie haben alles gemacht! 🌈</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListHeading">
+        <source>Things To Do</source>
+        <target state="needs-review-translation">Dinge die zu tun sind</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListSubheading">
+        <source>My List</source>
+        <target state="needs-review-translation">Meine Liste</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ListTitle">
+        <source>My List</source>
+        <target state="needs-review-translation">Meine Liste</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavListText">
+        <source>My List</source>
+        <target state="needs-review-translation">Meine Liste</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="NavListTitle">
+        <source>My TODO List</source>
+        <target state="needs-review-translation">Meine TODO-Liste</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="PageTitleFormat">
+        <source>{0} - {1}</source>
+        <target state="final">{0} - {1}</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="SwitchLanguage">
+        <source>Switch Language</source>
+        <target state="needs-review-translation">Sprache wechseln</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="ToggleNavigationAriaLabel">
+        <source>Toggle navigation</source>
+        <target state="needs-review-translation">Navigation wechseln</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

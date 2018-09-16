@@ -1,0 +1,20 @@
+<h2>
+    @Resources.AddItemHeading
+</h2>
+<form asp-controller="Home" asp-action="AddItem" method="post" role="form" class="form-inline">
+    <label class="sr-only" for="new-item-text">
+        @Resources.AddItemLabel
+    </label>
+
+    <input autocomplete="off"
+           autofocus
+           class="form-control form-control-lg mr-sm-2 w-75"
+           id="new-item-text"
+           name="text"
+           placeholder="@Resources.AddItemPlaceholder"
+           type="text">
+
+    <button class="btn btn-lg btn-primary" disabled id="add-new-item" type="submit">
+        @Resources.AddItemButton
+    </button>
+</form>
