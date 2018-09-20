@@ -2,10 +2,7 @@
 
 [![Build status](https://dev.azure.com/martincostello/aspnet-core-pseudo-localization/_apis/build/status/CI)](https://dev.azure.com/martincostello/aspnet-core-pseudo-localization/_build/latest?definitionId=71)
 
-<!--
-TODO: https://github.com/dustinmoris/CI-BuildStats/pull/18
-[![Build history](https://buildstats.info/azurepipelines/chart/martincostello/aspnet-core-pseudo-localization?branch=master&includeBuildsFromPullRequest=false&definitionId=71)](https://dev.azure.com/martincostello/aspnet-core-pseudo-localization/_build/latest?definitionId=71)
--->
+[![Build history](https://buildstats.info/azurepipelines/chart/martincostello/aspnet-core-pseudo-localization/71?branch=master&includeBuildsFromPullRequest=false)](https://dev.azure.com/martincostello/aspnet-core-pseudo-localization/_build?definitionId=71)
 
 ## Introduction
 
