@@ -119,7 +119,7 @@
       </trans-unit>
       <trans-unit id="SwitchLanguage">
         <source>Switch Language</source>
-        <target state="new">Changer de langue</target>
+        <target state="needs-review-translation">Changer de langue</target>
         <note />
       </trans-unit>
       <trans-unit id="ToggleNavigationAriaLabel">
