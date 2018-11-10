@@ -33,7 +33,7 @@ namespace TodoApp
         [InlineData("es-ES", "Cosas para hacer")]
         [InlineData("fr-FR", "Choses à faire")]
         [InlineData("ja-JP", "私は何をする必要がありますか")]
-        [InlineData("qps-ploc", "[Ţĥîñĝšẋẋ Ţöẋ Ðöẋ]")]
+        [InlineData("qps-Ploc", "[Ţĥîñĝšẋẋ Ţöẋ Ðöẋ]")]
         public async Task Homepage_Is_Localized(string culture, string expected)
         {
             // Arrange
