@@ -76,7 +76,7 @@ namespace TodoApp
 
             if (Environment.IsDevelopment())
             {
-                supportedCultures.Add(new CultureInfo("qps-ploc"));
+                supportedCultures.Add(new CultureInfo("qps-Ploc"));
             }
 
             var options = new RequestLocalizationOptions()

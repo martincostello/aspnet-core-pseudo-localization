@@ -3,11 +3,11 @@
     <IsPackable>false</IsPackable>
     <RootNamespace>TodoApp</RootNamespace>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <XlfLanguages>de-DE;en-GB;en-US;es-ES;fr-FR;ja-JP;qps-ploc</XlfLanguages>
+    <XlfLanguages>de-DE;en-GB;en-US;es-ES;fr-FR;ja-JP;qps-Ploc</XlfLanguages>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Humanizer" Version="2.5.1" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.0-rtm-35673" />
     <PackageReference Include="NodaTime" Version="2.4.2" />
     <PackageReference Include="XliffTasks" Version="0.2.0-beta-000081" PrivateAssets="All" />
   </ItemGroup>
