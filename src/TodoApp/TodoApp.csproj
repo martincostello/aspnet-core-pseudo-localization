@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <IsPackable>false</IsPackable>
     <RootNamespace>TodoApp</RootNamespace>
@@ -19,6 +19,26 @@
     <Compile Update="Resources.Designer.cs" AutoGen="True" DesignTime="True" DependentUpon="Resources.resx" />
     <EmbeddedResource Update="Resources.resx" Generator="PublicResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
   </ItemGroup>
+  <Target Name="UpdatePseudoLocalization" AfterTargets="UpdateXlf">
+    <Exec Condition=" '$(OS)' == 'Windows_NT' "
+          Command="where pseudo-localize"
+          ConsoleToMsBuild="true"
+          IgnoreExitCode="true"
+          StandardErrorImportance="Normal"
+          StandardOutputImportance="Normal">
+      <Output TaskParameter="ExitCode" PropertyName="_PseudoLocalizeInstalled" />
+    </Exec>
+    <Exec Condition=" '$(OS)' != 'Windows_NT' "
+          Command="which pseudo-localize"
+          ConsoleToMsBuild="true"
+          IgnoreExitCode="true"
+          StandardErrorImportance="Normal"
+          StandardOutputImportance="Normal">
+      <Output TaskParameter="ExitCode" PropertyName="_PseudoLocalizeInstalled" />
+    </Exec>
+    <Warning Condition=" $(_PseudoLocalizeInstalled) != 0 " Text="The PseudoLocalize .NET Core Global Tool is not installed. To install this tool, run the following command: dotnet tool install --global PseudoLocalize" />
+    <Exec Condition=" $(_PseudoLocalizeInstalled) == 0 " Command="pseudo-localize $(MSBuildThisFileDirectory)xlf\Resources.qps-Ploc.xlf --overwrite --force" ConsoleToMsBuild="true" StandardOutputImportance="Normal" />
+  </Target>
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
     <Exec Command="dotnet bundle" />
   </Target>
