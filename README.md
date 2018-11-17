@@ -6,7 +6,19 @@
 
 ## Introduction
 
-An example application that demonstrates using pseudo-localization with ASP.NET Core.
+An example application that demonstrates using pseudo-localization with ASP.NET Core for testing that strings shown in the user interface have been appropriately prepared for localization.
+
+### English (`en-GB`)
+
+Below is the sample application when run in the default locale (UK English).
+
+![TodoApp in English](./docs/todoapp.en-GB.png "TodoApp in English")
+
+### Pseudo-locale (`qps-Ploc`)
+
+Below is the sample application when run using the Windows base pseudo-locale. UI elements that are not user data are rendered using with additional length, accents and surrounded in square brackets.
+
+![TodoApp with Pseudo-localization](./docs/todoapp.qps-Ploc.png "TodoApp with Pseudo-localization")
 
 ## Feedback
 
