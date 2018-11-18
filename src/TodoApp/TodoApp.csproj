@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
+    <AspNetCoreHostingModel>inprocess</AspNetCoreHostingModel>
     <IsPackable>false</IsPackable>
     <RootNamespace>TodoApp</RootNamespace>
     <TargetFramework>netcoreapp2.2</TargetFramework>
