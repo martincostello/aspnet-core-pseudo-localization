@@ -19,7 +19,7 @@
       </trans-unit>
       <trans-unit id="AddItemPlaceholder">
         <source>Buy eggs 🥚</source>
-        <target state="final">Buy eggs 🥚</target>
+        <target state="final">Buy tea ☕</target>
         <note />
       </trans-unit>
       <trans-unit id="ApplicationName">
