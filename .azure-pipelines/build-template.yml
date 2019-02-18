@@ -57,6 +57,7 @@ phases:
         displayName: Publish test results
         condition: always()
         inputs:
+          failTaskOnFailedTests: true
           testRunner: VSTest
           testRunTitle: Tests ($(AgentOSName))
           testResultsFiles: $(Build.SourcesDirectory)/**/*.trx
