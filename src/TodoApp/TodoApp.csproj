@@ -7,7 +7,7 @@
     <XlfLanguages>de-DE;en-GB;en-US;es-ES;fr-FR;ja-JP;qps-Ploc</XlfLanguages>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Humanizer" Version="2.5.16" />
+    <PackageReference Include="Humanizer" Version="2.6.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="NodaTime" Version="2.4.5" />
     <PackageReference Include="PseudoLocalizer.Humanizer" Version="0.1.1" />
