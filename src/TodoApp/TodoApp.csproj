@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Humanizer" Version="2.5.16" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="NodaTime" Version="2.4.4" />
+    <PackageReference Include="NodaTime" Version="2.4.5" />
     <PackageReference Include="PseudoLocalizer.Humanizer" Version="0.1.1" />
     <PackageReference Include="XliffTasks" Version="0.2.0-beta-63730-01" PrivateAssets="All" />
   </ItemGroup>
