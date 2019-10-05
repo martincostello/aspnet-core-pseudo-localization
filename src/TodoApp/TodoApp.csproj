@@ -7,11 +7,11 @@
     <XlfLanguages>de-DE;en-GB;en-US;es-ES;fr-FR;ja-JP;qps-Ploc</XlfLanguages>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Humanizer" Version="2.7.2" />
+    <PackageReference Include="Humanizer" Version="2.7.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
     <PackageReference Include="NodaTime" Version="2.4.7" />
-    <PackageReference Include="PseudoLocalizer.Humanizer" Version="0.1.2" />
+    <PackageReference Include="PseudoLocalizer.Humanizer" Version="0.2.0" />
     <PackageReference Include="XliffTasks" Version="0.2.0-beta-63730-01" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>
