@@ -35,14 +35,14 @@ namespace TodoApp
         /// Clears the current <see cref="ITestOutputHelper"/>.
         /// </summary>
         public virtual void ClearOutputHelper()
-            => Server.Host.Services.GetRequiredService<ITestOutputHelperAccessor>().OutputHelper = null;
+            => Server.Services.GetRequiredService<ITestOutputHelperAccessor>().OutputHelper = null;
 
         /// <summary>
         /// Sets the <see cref="ITestOutputHelper"/> to use.
         /// </summary>
         /// <param name="value">The <see cref="ITestOutputHelper"/> to use.</param>
         public virtual void SetOutputHelper(ITestOutputHelper value)
-            => Server.Host.Services.GetRequiredService<ITestOutputHelperAccessor>().OutputHelper = value;
+            => Server.Services.GetRequiredService<ITestOutputHelperAccessor>().OutputHelper = value;
 
         /// <inheritdoc />
         protected override void ConfigureWebHost(IWebHostBuilder builder)
