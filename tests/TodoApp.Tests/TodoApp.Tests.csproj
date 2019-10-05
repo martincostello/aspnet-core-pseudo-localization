@@ -2,11 +2,11 @@
   <PropertyGroup>
     <IsPackable>false</IsPackable>
     <RootNamespace>TodoApp</RootNamespace>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="MartinCostello.Logging.XUnit" Version="0.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
     <PackageReference Include="Shouldly" Version="3.0.2" />

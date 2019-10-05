@@ -2,10 +2,9 @@
   <PropertyGroup>
     <Authors>martin_costello</Authors>
     <Company>https://github.com/martincostello/aspnet-core-pseudo-localization</Company>
-    <Copyright>Martin Costello (c) 2018</Copyright>
+    <Copyright>Martin Costello (c) 2018-$([System.DateTime]::Now.ToString(yyyy))</Copyright>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <LangVersion>latest</LangVersion>
-    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/martincostello/aspnet-core-pseudo-localization</PackageProjectUrl>

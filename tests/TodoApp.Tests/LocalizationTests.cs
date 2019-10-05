@@ -37,7 +37,7 @@ namespace TodoApp
         public async Task Homepage_Is_Localized(string culture, string expected)
         {
             // Arrange
-            string expectedHtml = Fixture.Server.Host.Services.GetRequiredService<HtmlEncoder>().Encode(expected);
+            string expectedHtml = Fixture.Server.Services.GetRequiredService<HtmlEncoder>().Encode(expected);
 
             using (var client = Fixture.CreateClient())
             {

@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using NodaTime;
 using TodoApp.Data;
 using TodoApp.Services;
@@ -18,7 +19,7 @@ namespace TodoApp
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration, IHostingEnvironment environment)
+        public Startup(IConfiguration configuration, IHostEnvironment environment)
         {
             Configuration = configuration;
             Environment = environment;
@@ -26,7 +27,7 @@ namespace TodoApp
 
         public IConfiguration Configuration { get; }
 
-        public IHostingEnvironment Environment { get; }
+        public IHostEnvironment Environment { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -39,12 +40,12 @@ namespace TodoApp
 
             services.AddMvc()
                     .AddViewLocalization()
-                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                    .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             services.AddDbContext<TodoContext>((builder) => builder.UseInMemoryDatabase(databaseName: "TodoApp"));
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider provider)
+        public void Configure(IApplicationBuilder app, IHostEnvironment env, IServiceProvider provider)
         {
             app.UseRequestLocalization(provider.GetRequiredService<RequestLocalizationOptions>());
 
@@ -59,7 +60,9 @@ namespace TodoApp
             }
 
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+
+            app.UseRouting();
+            app.UseEndpoints((p) => p.MapDefaultControllerRoute());
         }
 
         private RequestLocalizationOptions CreateLocalizationOptions()
