@@ -18,11 +18,11 @@ phases:
       ${{ if ne(parameters.queueName, '') }}:
         name: ${{ parameters.queueName }}
       ${{ if and(eq(parameters.queueName, ''), eq(parameters.agentOS, 'Linux')) }}:
-        name: Hosted Ubuntu 1604
+        name: Hosted Ubuntu 1804
       ${{ if and(eq(parameters.queueName, ''), eq(parameters.agentOS, 'macOS')) }}:
         name: Hosted macOS
       ${{ if and(eq(parameters.queueName, ''), eq(parameters.agentOS, 'Windows')) }}:
-        name: Hosted VS2017
+        name: Hosted Windows 2019 with VS2019
     variables:
       AgentOSName: ${{ parameters.agentOS }}
       ArchiveName: ${{ parameters.artifacts.archiveName }}
