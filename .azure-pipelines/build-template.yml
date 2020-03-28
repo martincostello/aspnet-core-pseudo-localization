@@ -18,7 +18,7 @@ phases:
       ${{ if ne(parameters.queueName, '') }}:
         name: ${{ parameters.queueName }}
       ${{ if and(eq(parameters.queueName, ''), eq(parameters.agentOS, 'Linux')) }}:
-        name: Hosted Ubuntu 1804
+        name: Hosted Ubuntu 1604
       ${{ if and(eq(parameters.queueName, ''), eq(parameters.agentOS, 'macOS')) }}:
         name: Hosted macOS
       ${{ if and(eq(parameters.queueName, ''), eq(parameters.agentOS, 'Windows')) }}:
