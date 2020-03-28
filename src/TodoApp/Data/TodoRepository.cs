@@ -36,6 +36,7 @@ namespace TodoApp.Data
         {
             var item = new TodoItem()
             {
+                Id = Guid.NewGuid().ToString(),
                 CreatedAt = Now(),
                 Text = text,
             };
