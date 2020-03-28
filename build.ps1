@@ -1,3 +1,4 @@
+#! /usr/bin/pwsh
 param(
     [Parameter(Mandatory = $false)][string] $Configuration = "Release",
     [Parameter(Mandatory = $false)][string] $VersionSuffix = "",
@@ -23,7 +24,7 @@ if ($OutputPath -eq "") {
 
 $installDotNetSdk = $false;
 
-if (($null -eq (Get-Command "dotnet.exe" -ErrorAction SilentlyContinue)) -and ($null -eq (Get-Command "dotnet" -ErrorAction SilentlyContinue))) {
+if (($null -eq (Get-Command "dotnet" -ErrorAction SilentlyContinue)) -and ($null -eq (Get-Command "dotnet.exe" -ErrorAction SilentlyContinue))) {
     Write-Host "The .NET Core SDK is not installed."
     $installDotNetSdk = $true
 }
@@ -63,10 +64,10 @@ if ($installDotNetSdk -eq $true) {
     }
 }
 else {
-    $env:DOTNET_INSTALL_DIR = Split-Path -Path (Get-Command dotnet.exe).Path
+    $env:DOTNET_INSTALL_DIR = Split-Path -Path (Get-Command dotnet).Path
 }
 
-$dotnet = Join-Path "$env:DOTNET_INSTALL_DIR" "dotnet.exe"
+$dotnet = Join-Path "$env:DOTNET_INSTALL_DIR" "dotnet"
 
 if (($installDotNetSdk -eq $true) -And ($null -eq $env:TF_BUILD)) {
     $env:PATH = "$env:DOTNET_INSTALL_DIR;$env:PATH"

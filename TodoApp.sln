@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6326B5D0-9981-4488-B46F-9879F825965D}"
 EndProject
@@ -12,8 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		Build.ps1 = Build.ps1
-		build.sh = build.sh
+		build.ps1 = build.ps1
 		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
 		Directory.Build.props = Directory.Build.props
 		global.json = global.json
@@ -51,6 +50,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEM
 		.github\ISSUE_TEMPLATE\bug_report.md = .github\ISSUE_TEMPLATE\bug_report.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{86E6F5AB-6537-4A16-B5FD-2B6070F99EE0}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build.yml = .github\workflows\build.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +80,7 @@ Global
 		{1704F894-AC00-4052-92C7-07D1554DAD6F} = {813B2DEF-0737-4242-8AB4-CF0725752CD0}
 		{62E14D54-FE91-4A24-A7D2-82661587A2DC} = {813B2DEF-0737-4242-8AB4-CF0725752CD0}
 		{25891391-7F49-4621-8A74-EEAB11D4A778} = {62E14D54-FE91-4A24-A7D2-82661587A2DC}
+		{86E6F5AB-6537-4A16-B5FD-2B6070F99EE0} = {62E14D54-FE91-4A24-A7D2-82661587A2DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {242240D8-68EA-4CBF-8E67-D955866F20ED}
