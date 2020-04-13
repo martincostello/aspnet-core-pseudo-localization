@@ -31,12 +31,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".vscode", ".vscode", "{0681
 		.vscode\tasks.json = .vscode\tasks.json
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".azure-pipelines", ".azure-pipelines", "{1704F894-AC00-4052-92C7-07D1554DAD6F}"
-	ProjectSection(SolutionItems) = preProject
-		.azure-pipelines\build-template.yml = .azure-pipelines\build-template.yml
-		.azure-pipelines\build.yml = .azure-pipelines\build.yml
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{62E14D54-FE91-4A24-A7D2-82661587A2DC}"
 	ProjectSection(SolutionItems) = preProject
 		.github\CONTRIBUTING.md = .github\CONTRIBUTING.md
