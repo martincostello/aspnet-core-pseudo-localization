@@ -7,12 +7,12 @@
     <XlfLanguages>de-DE;en-GB;en-US;es-ES;fr-FR;ja-JP;qps-Ploc</XlfLanguages>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Humanizer" Version="2.8.26" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
-    <PackageReference Include="NodaTime" Version="3.0.0" />
-    <PackageReference Include="PseudoLocalizer.Humanizer" Version="0.2.1" />
-    <PackageReference Include="XliffTasks" Version="1.0.0-beta.20206.1" PrivateAssets="All" />
+    <PackageReference Include="Humanizer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="NodaTime" />
+    <PackageReference Include="PseudoLocalizer.Humanizer" />
+    <PackageReference Include="XliffTasks" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources.Designer.cs" AutoGen="True" DesignTime="True" DependentUpon="Resources.resx" />
