@@ -1,10 +1,10 @@
-# ASP.NET Core Pseudo-localization
+# ASP.NET Pseudo-localization
 
 [![Build status](https://github.com/martincostello/aspnet-core-pseudo-localization/workflows/build/badge.svg?branch=main&event=push)](https://github.com/martincostello/aspnet-core-pseudo-localization/actions?query=workflow%3Abuild+branch%3Amain+event%3Apush)
 
 ## Introduction
 
-An example application that demonstrates using pseudo-localization with ASP.NET Core for testing that strings shown in the user interface have been appropriately prepared for localization.
+An example application that demonstrates using pseudo-localization with ASP.NET for testing that strings shown in the user interface have been appropriately prepared for localization.
 
 ### English (`en-GB`)
 
@@ -32,7 +32,7 @@ This project is licensed under the [Apache 2.0](http://www.apache.org/licenses/L
 
 ## Building and Testing
 
-Compiling the application yourself requires Git and the [.NET Core SDK](https://www.microsoft.com/net/download/core "Download the .NET Core SDK") to be installed (version `3.1.201` or later).
+Compiling the application yourself requires Git and the [.NET SDK](https://www.microsoft.com/net/download/core "Download the .NET SDK") to be installed (version `5.0.100` or later).
 
 To build and test the application locally from a terminal/command-line, run the following set of commands:
 

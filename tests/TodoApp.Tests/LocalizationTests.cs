@@ -48,7 +48,7 @@ namespace TodoApp
 
                     // Assert
                     response.StatusCode.ShouldBe(HttpStatusCode.OK);
-                    html.ShouldContain(expectedHtml, $"Unexpected content for {culture}: {html}");
+                    html.ShouldContain(expectedHtml, Case.Sensitive, $"Unexpected content for {culture}: {html}");
                 }
             }
         }
