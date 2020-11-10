@@ -8,7 +8,7 @@
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
     <PackageVersion Include="NodaTime" Version="3.0.3" />
     <PackageVersion Include="PseudoLocalizer.Humanizer" Version="0.3.0" />
-    <PackageVersion Include="Shouldly" Version="3.0.2" />
+    <PackageVersion Include="Shouldly" Version="4.0.0" />
     <PackageVersion Include="XliffTasks" Version="1.0.0-beta.20420.1" />
     <PackageVersion Include="xunit" Version="2.4.1" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.3" />
