@@ -39,18 +39,15 @@ namespace TodoApp
             // Arrange
             string expectedHtml = Fixture.Server.Services.GetRequiredService<HtmlEncoder>().Encode(expected);
 
-            using (var client = Fixture.CreateClient())
-            {
-                // Act
-                using (var response = await client.GetAsync($"/?culture={culture}"))
-                {
-                    string html = await response.Content.ReadAsStringAsync();
+            using var client = Fixture.CreateClient();
 
-                    // Assert
-                    response.StatusCode.ShouldBe(HttpStatusCode.OK);
-                    html.ShouldContain(expectedHtml, Case.Sensitive, $"Unexpected content for {culture}: {html}");
-                }
-            }
+            // Act
+            using var response = await client.GetAsync($"/?culture={culture}");
+            string html = await response.Content.ReadAsStringAsync();
+
+            // Assert
+            response.StatusCode.ShouldBe(HttpStatusCode.OK);
+            html.ShouldContain(expectedHtml, Case.Sensitive, $"Unexpected content for {culture}: {html}");
         }
     }
 }
