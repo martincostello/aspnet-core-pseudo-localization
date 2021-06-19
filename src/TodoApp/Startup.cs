@@ -39,8 +39,7 @@ namespace TodoApp
             services.AddLocalization();
 
             services.AddMvc()
-                    .AddViewLocalization()
-                    .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+                    .AddViewLocalization();
 
             services.AddDbContext<TodoContext>((builder) => builder.UseInMemoryDatabase(databaseName: "TodoApp"));
         }
