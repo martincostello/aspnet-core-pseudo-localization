@@ -7,43 +7,42 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace TodoApp
+namespace TodoApp;
+
+/// <summary>
+/// A class representing a factory for creating instances of the application.
+/// </summary>
+public class TestServerFixture : WebApplicationFactory<Startup>
 {
     /// <summary>
-    /// A class representing a factory for creating instances of the application.
+    /// Initializes a new instance of the <see cref="TestServerFixture"/> class.
     /// </summary>
-    public class TestServerFixture : WebApplicationFactory<Startup>
+    public TestServerFixture()
+        : base()
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TestServerFixture"/> class.
-        /// </summary>
-        public TestServerFixture()
-            : base()
+        ClientOptions.AllowAutoRedirect = false;
+        ClientOptions.BaseAddress = new Uri("https://localhost");
+
+        // HACK Force HTTP server startup
+        using (CreateDefaultClient())
         {
-            ClientOptions.AllowAutoRedirect = false;
-            ClientOptions.BaseAddress = new Uri("https://localhost");
-
-            // HACK Force HTTP server startup
-            using (CreateDefaultClient())
-            {
-            }
         }
-
-        /// <summary>
-        /// Clears the current <see cref="ITestOutputHelper"/>.
-        /// </summary>
-        public virtual void ClearOutputHelper()
-            => Server.Services.GetRequiredService<ITestOutputHelperAccessor>().OutputHelper = null;
-
-        /// <summary>
-        /// Sets the <see cref="ITestOutputHelper"/> to use.
-        /// </summary>
-        /// <param name="value">The <see cref="ITestOutputHelper"/> to use.</param>
-        public virtual void SetOutputHelper(ITestOutputHelper value)
-            => Server.Services.GetRequiredService<ITestOutputHelperAccessor>().OutputHelper = value;
-
-        /// <inheritdoc />
-        protected override void ConfigureWebHost(IWebHostBuilder builder)
-            => builder.ConfigureLogging((loggingBuilder) => loggingBuilder.ClearProviders().AddXUnit());
     }
+
+    /// <summary>
+    /// Clears the current <see cref="ITestOutputHelper"/>.
+    /// </summary>
+    public virtual void ClearOutputHelper()
+        => Server.Services.GetRequiredService<ITestOutputHelperAccessor>().OutputHelper = null;
+
+    /// <summary>
+    /// Sets the <see cref="ITestOutputHelper"/> to use.
+    /// </summary>
+    /// <param name="value">The <see cref="ITestOutputHelper"/> to use.</param>
+    public virtual void SetOutputHelper(ITestOutputHelper value)
+        => Server.Services.GetRequiredService<ITestOutputHelperAccessor>().OutputHelper = value;
+
+    /// <inheritdoc />
+    protected override void ConfigureWebHost(IWebHostBuilder builder)
+        => builder.ConfigureLogging((loggingBuilder) => loggingBuilder.ClearProviders().AddXUnit());
 }

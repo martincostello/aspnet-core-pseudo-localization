@@ -6,83 +6,82 @@ using NodaTime;
 using TodoApp.Data;
 using TodoApp.Services;
 
-namespace TodoApp
+namespace TodoApp;
+
+public class Startup
 {
-    public class Startup
+    public Startup(IConfiguration configuration, IHostEnvironment environment)
     {
-        public Startup(IConfiguration configuration, IHostEnvironment environment)
+        Configuration = configuration;
+        Environment = environment;
+    }
+
+    public IConfiguration Configuration { get; }
+
+    public IHostEnvironment Environment { get; }
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddSingleton(CreateLocalizationOptions());
+        services.AddSingleton<IClock>((_) => SystemClock.Instance);
+        services.AddScoped<ITodoRepository, TodoRepository>();
+        services.AddScoped<ITodoService, TodoService>();
+
+        services.AddLocalization();
+
+        services.AddMvc()
+                .AddViewLocalization();
+
+        services.AddDbContext<TodoContext>((builder) => builder.UseInMemoryDatabase(databaseName: "TodoApp"));
+    }
+
+    public void Configure(IApplicationBuilder app, IHostEnvironment env, IServiceProvider provider)
+    {
+        app.UseRequestLocalization(provider.GetRequiredService<RequestLocalizationOptions>());
+
+        if (env.IsDevelopment())
         {
-            Configuration = configuration;
-            Environment = environment;
+            app.UseDeveloperExceptionPage();
+        }
+        else
+        {
+            app.UseExceptionHandler("/Home/Error");
+            app.UseHsts();
         }
 
-        public IConfiguration Configuration { get; }
+        app.UseStaticFiles();
 
-        public IHostEnvironment Environment { get; }
+        app.UseRouting();
+        app.UseEndpoints((p) => p.MapDefaultControllerRoute());
+    }
 
-        public void ConfigureServices(IServiceCollection services)
+    private RequestLocalizationOptions CreateLocalizationOptions()
+    {
+        var supportedCultures = new List<CultureInfo>()
         {
-            services.AddSingleton(CreateLocalizationOptions());
-            services.AddSingleton<IClock>((_) => SystemClock.Instance);
-            services.AddScoped<ITodoRepository, TodoRepository>();
-            services.AddScoped<ITodoService, TodoService>();
+            new CultureInfo("de-DE"),
+            new CultureInfo("en-GB"),
+            new CultureInfo("en-US"),
+            new CultureInfo("es-ES"),
+            new CultureInfo("fr-FR"),
+            new CultureInfo("ja-JP"),
+        };
 
-            services.AddLocalization();
+        if (Environment.IsDevelopment())
+        {
+            supportedCultures.Add(new CultureInfo("qps-Ploc"));
 
-            services.AddMvc()
-                    .AddViewLocalization();
-
-            services.AddDbContext<TodoContext>((builder) => builder.UseInMemoryDatabase(databaseName: "TodoApp"));
+            new PseudoLocalizer.Humanizer.PseudoHumanizer()
+                .Freeze()
+                .Register();
         }
 
-        public void Configure(IApplicationBuilder app, IHostEnvironment env, IServiceProvider provider)
+        var options = new RequestLocalizationOptions()
         {
-            app.UseRequestLocalization(provider.GetRequiredService<RequestLocalizationOptions>());
+            SupportedCultures = supportedCultures,
+            SupportedUICultures = supportedCultures,
+        };
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
-            }
-
-            app.UseStaticFiles();
-
-            app.UseRouting();
-            app.UseEndpoints((p) => p.MapDefaultControllerRoute());
-        }
-
-        private RequestLocalizationOptions CreateLocalizationOptions()
-        {
-            var supportedCultures = new List<CultureInfo>()
-            {
-                new CultureInfo("de-DE"),
-                new CultureInfo("en-GB"),
-                new CultureInfo("en-US"),
-                new CultureInfo("es-ES"),
-                new CultureInfo("fr-FR"),
-                new CultureInfo("ja-JP"),
-            };
-
-            if (Environment.IsDevelopment())
-            {
-                supportedCultures.Add(new CultureInfo("qps-Ploc"));
-
-                new PseudoLocalizer.Humanizer.PseudoHumanizer()
-                    .Freeze()
-                    .Register();
-            }
-
-            var options = new RequestLocalizationOptions()
-            {
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures,
-            };
-
-            return options.SetDefaultCulture("en-GB");
-        }
+        return options.SetDefaultCulture("en-GB");
     }
 }
