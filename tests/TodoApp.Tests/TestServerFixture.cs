@@ -12,7 +12,7 @@ namespace TodoApp;
 /// <summary>
 /// A class representing a factory for creating instances of the application.
 /// </summary>
-public class TestServerFixture : WebApplicationFactory<Startup>
+public class TestServerFixture : WebApplicationFactory<Services.ITodoService>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="TestServerFixture"/> class.
@@ -22,11 +22,6 @@ public class TestServerFixture : WebApplicationFactory<Startup>
     {
         ClientOptions.AllowAutoRedirect = false;
         ClientOptions.BaseAddress = new Uri("https://localhost");
-
-        // HACK Force HTTP server startup
-        using (CreateDefaultClient())
-        {
-        }
     }
 
     /// <summary>
