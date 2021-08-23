@@ -3,11 +3,7 @@
 
 using System.Net;
 using System.Text.Encodings.Web;
-using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using Shouldly;
-using Xunit;
-using Xunit.Abstractions;
 
 namespace TodoApp
 {

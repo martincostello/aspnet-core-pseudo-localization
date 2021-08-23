@@ -4,6 +4,7 @@
     <Company>https://github.com/martincostello/aspnet-core-pseudo-localization</Company>
     <Copyright>Martin Costello (c) 2018-$([System.DateTime]::Now.ToString(yyyy))</Copyright>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <NeutralLanguage>en-US</NeutralLanguage>
@@ -16,4 +17,12 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <VersionPrefix>1.0.0</VersionPrefix>
   </PropertyGroup>
+  <ItemGroup>
+    <Using Include="System.Globalization" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(IsTestProject)' == 'true' ">
+    <Using Include="Shouldly" />
+    <Using Include="Xunit" />
+    <Using Include="Xunit.Abstractions" />
+  </ItemGroup>
 </Project>
