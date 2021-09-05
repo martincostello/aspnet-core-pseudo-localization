@@ -2,6 +2,8 @@
   <PropertyGroup>
     <AspNetCoreHostingModel>inprocess</AspNetCoreHostingModel>
     <IsPackable>false</IsPackable>
+    <!-- HACK Workaround for https://github.com/dotnet/sdk/issues/20444 -->
+    <LangVersion Condition="'$(BuildingInsideVisualStudio)' == 'true'">preview</LangVersion>
     <RootNamespace>TodoApp</RootNamespace>
     <TargetFramework>net6.0</TargetFramework>
     <XlfLanguages>de-DE;en-GB;en-US;es-ES;fr-FR;ja-JP;qps-Ploc</XlfLanguages>
