@@ -3,13 +3,13 @@
     <PackageVersion Include="Humanizer" Version="2.11.10" />
     <PackageVersion Include="MartinCostello.Logging.XUnit" Version="0.1.2" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.10" />
+    <PackageVersion Include="Microsoft.DotNet.XliffTasks" Version="1.0.0-beta.21452.1" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.10" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.10" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageVersion Include="NodaTime" Version="3.0.5" />
     <PackageVersion Include="PseudoLocalizer.Humanizer" Version="0.4.1" />
     <PackageVersion Include="Shouldly" Version="4.0.3" />
-    <PackageVersion Include="XliffTasks" Version="1.0.0-beta.20420.1" />
     <PackageVersion Include="xunit" Version="2.4.1" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.3" />
   </ItemGroup>
