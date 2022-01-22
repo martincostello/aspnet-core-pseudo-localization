@@ -1,4 +1,7 @@
-#! /usr/bin/pwsh
+#! /usr/bin/env pwsh
+
+#Requires -Version 7
+
 param(
     [Parameter(Mandatory = $false)][string] $Configuration = "Release",
     [Parameter(Mandatory = $false)][string] $VersionSuffix = "",
