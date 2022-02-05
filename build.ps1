@@ -1,5 +1,6 @@
 #! /usr/bin/env pwsh
 
+#Requires -PSEdition Core
 #Requires -Version 7
 
 param(
@@ -48,7 +49,7 @@ else {
 if ($installDotNetSdk -eq $true) {
 
     $env:DOTNET_INSTALL_DIR = Join-Path "$(Convert-Path "$PSScriptRoot")" ".dotnetcli"
-    $sdkPath = Join-Path $env:DOTNET_INSTALL_DIR "sdk\$dotnetVersion"
+    $sdkPath = Join-Path $env:DOTNET_INSTALL_DIR "sdk" $dotnetVersion
 
     if (!(Test-Path $sdkPath)) {
         if (!(Test-Path $env:DOTNET_INSTALL_DIR)) {
@@ -81,7 +82,7 @@ if ($installDotNetSdk -eq $true) {
 function DotNetTest {
     param([string]$Project)
 
-    & $dotnet test $Project --output $OutputPath
+    & $dotnet test $Project --configuration $Configuration --output $OutputPath
 
     if ($LASTEXITCODE -ne 0) {
         throw "dotnet test failed with exit code $LASTEXITCODE"
@@ -100,11 +101,11 @@ function DotNetPublish {
 }
 
 $testProjects = @(
-    (Join-Path $solutionPath "tests\TodoApp.Tests\TodoApp.Tests.csproj")
+    (Join-Path $solutionPath "tests" "TodoApp.Tests" "TodoApp.Tests.csproj")
 )
 
 $publishProjects = @(
-    (Join-Path $solutionPath "src\TodoApp\TodoApp.csproj")
+    (Join-Path $solutionPath "src" "TodoApp" "TodoApp.csproj")
 )
 
 Write-Host "Publishing solution..." -ForegroundColor Green
