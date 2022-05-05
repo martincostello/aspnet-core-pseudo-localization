@@ -10,6 +10,6 @@
     <PackageVersion Include="PseudoLocalizer.Humanizer" Version="0.7.0" />
     <PackageVersion Include="Shouldly" Version="4.0.3" />
     <PackageVersion Include="xunit" Version="2.4.1" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.4" />
   </ItemGroup>
 </Project>
