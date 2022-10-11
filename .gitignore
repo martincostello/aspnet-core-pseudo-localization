@@ -23,6 +23,7 @@ typings
 UpgradeLog*.htm
 UpgradeLog*.XML
 PublishProfiles
+*.binlog
 *.DotSettings
 *.GhostDoc.xml
 *.log
