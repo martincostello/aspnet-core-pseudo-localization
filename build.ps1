@@ -14,9 +14,6 @@ param(
 $env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE = "true"
 $env:NUGET_XMLDOC_MODE = "skip"
 
-# HACK Workaround for https://github.com/dotnet/sdk/issues/27890
-$env:MSBUILDDISABLEFEATURESFROMVERSION = "17.4"
-
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
 
