@@ -32,7 +32,7 @@ This project is licensed under the [Apache 2.0](http://www.apache.org/licenses/L
 
 ## Building and Testing
 
-Compiling the application yourself requires Git and the [.NET SDK](https://www.microsoft.com/net/download/core "Download the .NET SDK") to be installed (version `7.0.100` or later).
+Compiling the application yourself requires Git and the [.NET SDK](https://www.microsoft.com/net/download/core "Download the .NET SDK") to be installed (version `8.0.100` or later).
 
 To build and test the application locally from a terminal/command-line, run the following set of commands:
 
