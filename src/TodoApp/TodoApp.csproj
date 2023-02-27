@@ -3,7 +3,7 @@
     <AspNetCoreHostingModel>inprocess</AspNetCoreHostingModel>
     <IsPackable>false</IsPackable>
     <RootNamespace>TodoApp</RootNamespace>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <XlfLanguages>de-DE;en-GB;en-US;es-ES;fr-FR;ja-JP;qps-Ploc</XlfLanguages>
   </PropertyGroup>
   <ItemGroup>
