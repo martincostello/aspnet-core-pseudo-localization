@@ -17,13 +17,13 @@ $env:NUGET_XMLDOC_MODE = "skip"
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
 
-$solutionPath = Split-Path $MyInvocation.MyCommand.Definition
+$solutionPath = $PSScriptRoot
 $sdkFile = Join-Path $solutionPath "global.json"
 
 $dotnetVersion = (Get-Content $sdkFile | Out-String | ConvertFrom-Json).sdk.version
 
 if ($OutputPath -eq "") {
-    $OutputPath = Join-Path "$(Convert-Path "$PSScriptRoot")" "artifacts"
+    $OutputPath = Join-Path $PSScriptRoot "artifacts"
 }
 
 $installDotNetSdk = $false;
@@ -48,7 +48,7 @@ else {
 
 if ($installDotNetSdk -eq $true) {
 
-    $env:DOTNET_INSTALL_DIR = Join-Path "$(Convert-Path "$PSScriptRoot")" ".dotnetcli"
+    $env:DOTNET_INSTALL_DIR = Join-Path $PSScriptRoot ".dotnetcli"
     $sdkPath = Join-Path $env:DOTNET_INSTALL_DIR "sdk" $dotnetVersion
 
     if (!(Test-Path $sdkPath)) {
@@ -119,3 +119,4 @@ if ($SkipTests -eq $false) {
         DotNetTest $project
     }
 }
+
