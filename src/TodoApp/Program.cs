@@ -35,7 +35,7 @@ var options = new RequestLocalizationOptions()
 options.SetDefaultCulture("en-GB");
 
 builder.Services.AddSingleton(options);
-builder.Services.AddSingleton<TimeProvider>((_) => TimeProvider.System);
+builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddScoped<ITodoRepository, TodoRepository>();
 builder.Services.AddScoped<ITodoService, TodoService>();
 
