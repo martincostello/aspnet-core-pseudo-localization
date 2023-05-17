@@ -2,7 +2,6 @@
 // Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
 
 using Microsoft.EntityFrameworkCore;
-using NodaTime;
 using TodoApp.Data;
 using TodoApp.Services;
 
@@ -36,7 +35,7 @@ var options = new RequestLocalizationOptions()
 options.SetDefaultCulture("en-GB");
 
 builder.Services.AddSingleton(options);
-builder.Services.AddSingleton<IClock>((_) => SystemClock.Instance);
+builder.Services.AddSingleton<TimeProvider>((_) => TimeProvider.System);
 builder.Services.AddScoped<ITodoRepository, TodoRepository>();
 builder.Services.AddScoped<ITodoService, TodoService>();
 
