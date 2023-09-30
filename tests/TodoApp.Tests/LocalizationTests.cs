@@ -10,18 +10,13 @@ namespace TodoApp;
 /// <summary>
 /// A class containing tests for loading resources in the website.
 /// </summary>
-public class LocalizationTests : IntegrationTest
+/// <remarks>
+/// Initializes a new instance of the <see cref="LocalizationTests"/> class.
+/// </remarks>
+/// <param name="fixture">The fixture to use.</param>
+/// <param name="outputHelper">The test output helper to use.</param>
+public class LocalizationTests(TestServerFixture fixture, ITestOutputHelper outputHelper) : IntegrationTest(fixture, outputHelper)
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="LocalizationTests"/> class.
-    /// </summary>
-    /// <param name="fixture">The fixture to use.</param>
-    /// <param name="outputHelper">The test output helper to use.</param>
-    public LocalizationTests(TestServerFixture fixture, ITestOutputHelper outputHelper)
-        : base(fixture, outputHelper)
-    {
-    }
-
     [Theory]
     [InlineData("de-DE", "Dinge die zu tun sind")]
     [InlineData("en-GB", "Things To Do")]
