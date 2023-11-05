@@ -4,8 +4,6 @@
 #Requires -Version 7
 
 param(
-    [Parameter(Mandatory = $false)][string] $Configuration = "Release",
-    [Parameter(Mandatory = $false)][string] $VersionSuffix = "",
     [Parameter(Mandatory = $false)][string] $OutputPath = "",
     [Parameter(Mandatory = $false)][switch] $SkipTests
 )
@@ -14,6 +12,7 @@ param(
 $env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE = "true"
 $env:NUGET_XMLDOC_MODE = "skip"
 
+$Configuration = "Release"
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
 
@@ -82,7 +81,7 @@ if ($installDotNetSdk -eq $true) {
 function DotNetTest {
     param([string]$Project)
 
-    & $dotnet test $Project --configuration $Configuration --output $OutputPath
+    & $dotnet test $Project --configuration $Configuration --output $OutputPath --tl
 
     if ($LASTEXITCODE -ne 0) {
         throw "dotnet test failed with exit code $LASTEXITCODE"
@@ -93,7 +92,7 @@ function DotNetPublish {
     param([string]$Project)
 
     $publishPath = (Join-Path $OutputPath "publish")
-    & $dotnet publish $Project --output $publishPath --configuration $Configuration
+    & $dotnet publish $Project --output $publishPath --tl
 
     if ($LASTEXITCODE -ne 0) {
         throw "dotnet publish failed with exit code $LASTEXITCODE"
@@ -110,7 +109,7 @@ $publishProjects = @(
 
 Write-Host "Publishing solution..." -ForegroundColor Green
 ForEach ($project in $publishProjects) {
-    DotNetPublish $project $Configuration $PrereleaseSuffix
+    DotNetPublish $project
 }
 
 if ($SkipTests -eq $false) {
