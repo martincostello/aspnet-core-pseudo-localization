@@ -10,41 +10,34 @@ namespace TodoApp.Services;
 /// <summary>
 /// A class representing the class for managing TODO items. This class cannot be inherited.
 /// </summary>
-public sealed class TodoService : ITodoService
+/// <remarks>
+/// Initializes a new instance of the <see cref="TodoService"/> class.
+/// </remarks>
+/// <param name="repository">The <see cref="ITodoRepository"/> to use.</param>
+public sealed class TodoService(ITodoRepository repository) : ITodoService
 {
-    private readonly ITodoRepository _repository;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="TodoService"/> class.
-    /// </summary>
-    /// <param name="repository">The <see cref="ITodoRepository"/> to use.</param>
-    public TodoService(ITodoRepository repository)
-    {
-        _repository = repository;
-    }
-
     /// <inheritdoc />
     public Task AddItemAsync(string text, CancellationToken cancellationToken)
     {
-        return _repository.AddItemAsync(text, cancellationToken);
+        return repository.AddItemAsync(text, cancellationToken);
     }
 
     /// <inheritdoc />
     public Task<bool?> CompleteItemAsync(string id, CancellationToken cancellationToken)
     {
-        return _repository.CompleteItemAsync(id, cancellationToken);
+        return repository.CompleteItemAsync(id, cancellationToken);
     }
 
     /// <inheritdoc />
     public Task<bool> DeleteItemAsync(string id, CancellationToken cancellationToken)
     {
-        return _repository.DeleteItemAsync(id, cancellationToken);
+        return repository.DeleteItemAsync(id, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<TodoListViewModel> GetListAsync(CancellationToken cancellationToken)
     {
-        var items = await _repository.GetItemsAsync(cancellationToken);
+        var items = await repository.GetItemsAsync(cancellationToken);
 
         var result = new TodoListViewModel();
 

@@ -9,19 +9,12 @@ using TodoApp.Services;
 
 namespace TodoApp.Controllers;
 
-public class HomeController : Controller
+public class HomeController(ITodoService service) : Controller
 {
-    public HomeController(ITodoService service)
-    {
-        Service = service;
-    }
-
-    private ITodoService Service { get; }
-
     [HttpGet]
     public async Task<IActionResult> Index(CancellationToken cancellationToken = default)
     {
-        var model = await Service.GetListAsync(cancellationToken);
+        var model = await service.GetListAsync(cancellationToken);
         return View(model);
     }
 
@@ -34,7 +27,7 @@ public class HomeController : Controller
             return BadRequest();
         }
 
-        await Service.AddItemAsync(text, cancellationToken);
+        await service.AddItemAsync(text, cancellationToken);
 
         return RedirectToAction(nameof(Index));
     }
@@ -48,9 +41,9 @@ public class HomeController : Controller
             return BadRequest();
         }
 
-        bool? result = await Service.CompleteItemAsync(id, cancellationToken);
+        bool? result = await service.CompleteItemAsync(id, cancellationToken);
 
-        if (result == null)
+        if (result is null)
         {
             return NotFound();
         }
@@ -72,7 +65,7 @@ public class HomeController : Controller
             return BadRequest();
         }
 
-        if (!await Service.DeleteItemAsync(id, cancellationToken))
+        if (!await service.DeleteItemAsync(id, cancellationToken))
         {
             return NotFound();
         }
