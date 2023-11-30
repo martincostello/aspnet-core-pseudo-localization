@@ -12,6 +12,10 @@ param(
 $env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE = "true"
 $env:NUGET_XMLDOC_MODE = "skip"
 
+if ($null -eq $env:MSBUILDTERMINALLOGGER) {
+    $env:MSBUILDTERMINALLOGGER = "auto"
+}
+
 $Configuration = "Release"
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
@@ -81,7 +85,7 @@ if ($installDotNetSdk -eq $true) {
 function DotNetTest {
     param([string]$Project)
 
-    & $dotnet test $Project --configuration $Configuration --output $OutputPath --tl
+    & $dotnet test $Project --configuration $Configuration --output $OutputPath
 
     if ($LASTEXITCODE -ne 0) {
         throw "dotnet test failed with exit code $LASTEXITCODE"
@@ -92,7 +96,7 @@ function DotNetPublish {
     param([string]$Project)
 
     $publishPath = (Join-Path $OutputPath "publish")
-    & $dotnet publish $Project --output $publishPath --tl
+    & $dotnet publish $Project --output $publishPath
 
     if ($LASTEXITCODE -ne 0) {
         throw "dotnet publish failed with exit code $LASTEXITCODE"
