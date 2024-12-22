@@ -15,7 +15,7 @@ namespace TodoApp;
 /// </remarks>
 /// <param name="fixture">The fixture to use.</param>
 /// <param name="outputHelper">The test output helper to use.</param>
-[Collection(TestServerCollection.Name)]
+[Collection<TestServerCollection>]
 public class LocalizationTests(TestServerFixture fixture, ITestOutputHelper outputHelper) : IntegrationTest(fixture, outputHelper)
 {
     [Theory]
@@ -29,13 +29,14 @@ public class LocalizationTests(TestServerFixture fixture, ITestOutputHelper outp
     public async Task Homepage_Is_Localized(string culture, string expected)
     {
         // Arrange
+        var cancellationToken = TestContext.Current.CancellationToken;
         string expectedHtml = Fixture.Server.Services.GetRequiredService<HtmlEncoder>().Encode(expected);
 
         using var client = Fixture.CreateClient();
 
         // Act
-        using var response = await client.GetAsync($"/?culture={culture}");
-        string html = await response.Content.ReadAsStringAsync();
+        using var response = await client.GetAsync($"/?culture={culture}", cancellationToken);
+        string html = await response.Content.ReadAsStringAsync(cancellationToken);
 
         // Assert
         response.StatusCode.ShouldBe(HttpStatusCode.OK);
