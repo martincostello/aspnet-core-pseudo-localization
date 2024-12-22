@@ -6,7 +6,7 @@ namespace TodoApp;
 /// <summary>
 /// The base class for integration tests.
 /// </summary>
-[Collection(TestServerCollection.Name)]
+[Collection<TestServerCollection>]
 public abstract class IntegrationTest : IDisposable
 {
     private bool _disposed;
