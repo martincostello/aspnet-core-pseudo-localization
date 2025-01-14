@@ -1,6 +1,6 @@
 # ASP.NET Pseudo-localization
 
-[![Build status](https://github.com/martincostello/aspnet-core-pseudo-localization/workflows/build/badge.svg?branch=main&event=push)](https://github.com/martincostello/aspnet-core-pseudo-localization/actions?query=workflow%3Abuild+branch%3Amain+event%3Apush)
+[![Build status](https://github.com/martincostello/aspnet-core-pseudo-localization/actions/workflows/build.yml/badge.svg?branch=main&event=push)](https://github.com/martincostello/aspnet-core-pseudo-localization/actions/workflows/build.yml?query=branch%3Amain+event%3Apush)
 
 ## Introduction
 
