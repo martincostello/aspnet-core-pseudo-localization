@@ -4,7 +4,7 @@
     <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
     <IsPackable>false</IsPackable>
     <RootNamespace>TodoApp</RootNamespace>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <XlfLanguages>de-DE;en-GB;en-US;es-ES;fr-FR;ja-JP;qps-Ploc</XlfLanguages>
   </PropertyGroup>
   <ItemGroup>
