@@ -24,7 +24,7 @@ if ($OutputPath -eq "") {
 $installDotNetSdk = $false;
 
 if (($null -eq (Get-Command "dotnet" -ErrorAction SilentlyContinue)) -and ($null -eq (Get-Command "dotnet.exe" -ErrorAction SilentlyContinue))) {
-    Write-Host "The .NET SDK is not installed."
+    Write-Output "The .NET SDK is not installed."
     $installDotNetSdk = $true
 }
 else {
@@ -36,7 +36,7 @@ else {
     }
 
     if ($installedDotNetVersion -ne $dotnetVersion) {
-        Write-Host "The required version of the .NET SDK is not installed. Expected $dotnetVersion."
+        Write-Output "The required version of the .NET SDK is not installed. Expected $dotnetVersion."
         $installDotNetSdk = $true
     }
 }
@@ -75,9 +75,9 @@ if ($installDotNetSdk) {
 }
 
 function DotNetTest {
-    param([string]$Project)
+    param()
 
-    & $dotnet test $Project --configuration $Configuration --output $OutputPath
+    & $dotnet test --configuration $Configuration --output $OutputPath
 
     if ($LASTEXITCODE -ne 0) {
         throw "dotnet test failed with exit code $LASTEXITCODE"
@@ -95,22 +95,16 @@ function DotNetPublish {
     }
 }
 
-$testProjects = @(
-    (Join-Path $solutionPath "tests" "TodoApp.Tests" "TodoApp.Tests.csproj")
-)
-
 $publishProjects = @(
     (Join-Path $solutionPath "src" "TodoApp" "TodoApp.csproj")
 )
 
-Write-Host "Publishing solution..." -ForegroundColor Green
+Write-Output "Publishing solution..." -ForegroundColor Green
 ForEach ($project in $publishProjects) {
     DotNetPublish $project
 }
 
-if ($SkipTests -eq $false) {
-    Write-Host "Testing $($testProjects.Count) project(s)..." -ForegroundColor Green
-    ForEach ($project in $testProjects) {
-        DotNetTest $project
-    }
+if (-Not $SkipTests) {
+    Write-Output "Testing solution..."
+    DotNetTest
 }
