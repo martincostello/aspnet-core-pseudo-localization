@@ -75,9 +75,9 @@ if ($installDotNetSdk) {
 }
 
 function DotNetTest {
-    param()
+    param([string]$Project)
 
-    & $dotnet test --configuration $Configuration --output $OutputPath
+    & $dotnet test $Project --configuration $Configuration --output $OutputPath
 
     if ($LASTEXITCODE -ne 0) {
         throw "dotnet test failed with exit code $LASTEXITCODE"
@@ -99,12 +99,18 @@ $publishProjects = @(
     (Join-Path $solutionPath "src" "TodoApp" "TodoApp.csproj")
 )
 
+$testProjects = @(
+    (Join-Path $solutionPath "tests" "TodoApp.Tests" "TodoApp.Tests.csproj")
+)
+
 Write-Output "Publishing solution..." -ForegroundColor Green
 ForEach ($project in $publishProjects) {
     DotNetPublish $project
 }
 
 if (-Not $SkipTests) {
-    Write-Output "Testing solution..."
-    DotNetTest
+    Write-Host "Testing $($testProjects.Count) project(s)..." -ForegroundColor Green
+    ForEach ($project in $testProjects) {
+        DotNetTest $project
+    }
 }
