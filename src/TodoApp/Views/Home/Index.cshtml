@@ -9,7 +9,7 @@
 <hr />
 @if (Model.Items.Count == 0)
 {
-    <div class="alert alert-success lead" role="alert">
+    <div class="alert alert-success" role="alert">
         @Resources.ListCompleted
     </div>
 }
@@ -20,7 +20,7 @@ else
     </h2>
     <div>
         <table class="table">
-            <thead class="thead-light">
+            <thead>
                 <tr>
                     <th class="w-50" scope="col">@Resources.ListColumn1</th>
                     <th class="w-25" scope="col">@Resources.ListColumn2</th>
