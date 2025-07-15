@@ -103,13 +103,13 @@ $testProjects = @(
     (Join-Path $solutionPath "tests" "TodoApp.Tests" "TodoApp.Tests.csproj")
 )
 
-Write-Output "Publishing solution..." -ForegroundColor Green
+Write-Output "Publishing solution..."
 ForEach ($project in $publishProjects) {
     DotNetPublish $project
 }
 
 if (-Not $SkipTests) {
-    Write-Host "Testing $($testProjects.Count) project(s)..." -ForegroundColor Green
+    Write-Output "Testing $($testProjects.Count) project(s)..."
     ForEach ($project in $testProjects) {
         DotNetTest $project
     }
