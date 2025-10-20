@@ -3,7 +3,7 @@
     <PackageVersion Include="Humanizer" Version="2.14.1" />
     <PackageVersion Include="MartinCostello.Logging.XUnit.v3" Version="0.6.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.10" />
-    <PackageVersion Include="Microsoft.DotNet.XliffTasks" Version="9.0.0-beta.25503.3" />
+    <PackageVersion Include="Microsoft.DotNet.XliffTasks" Version="9.0.0-beta.25515.2" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.10" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
     <PackageVersion Include="PseudoLocalizer.Humanizer" Version="0.10.1" />
