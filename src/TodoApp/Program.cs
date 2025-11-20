@@ -20,10 +20,6 @@ var supportedCultures = new List<CultureInfo>()
 if (builder.Environment.IsDevelopment())
 {
     supportedCultures.Add(new("qps-Ploc"));
-
-    new PseudoLocalizer.Humanizer.PseudoHumanizer()
-        .Freeze()
-        .Register();
 }
 
 var options = new RequestLocalizationOptions()
