@@ -6,7 +6,7 @@
     <PackageVersion Include="Microsoft.DotNet.XliffTasks" Version="10.0.0-beta.25578.106" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
-    <PackageVersion Include="PseudoLocalizer.Humanizer" Version="0.12.0" />
+    <PackageVersion Include="PseudoLocalizer.Humanizer" Version="0.12.1" />
     <PackageVersion Include="Shouldly" Version="4.3.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
     <PackageVersion Include="xunit.v3" Version="3.2.1" />
