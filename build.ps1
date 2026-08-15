@@ -4,7 +4,6 @@
 #Requires -Version 7
 
 param(
-    [Parameter(Mandatory = $false)][string] $OutputPath = "",
     [Parameter(Mandatory = $false)][switch] $SkipTests
 )
 
@@ -16,10 +15,6 @@ $solutionPath = $PSScriptRoot
 $sdkFile = Join-Path $solutionPath "global.json"
 
 $dotnetVersion = (Get-Content $sdkFile | Out-String | ConvertFrom-Json).sdk.version
-
-if ($OutputPath -eq "") {
-    $OutputPath = Join-Path $PSScriptRoot "artifacts"
-}
 
 $installDotNetSdk = $false;
 
@@ -77,7 +72,7 @@ if ($installDotNetSdk) {
 function DotNetTest {
     param([string]$Project)
 
-    & $dotnet test $Project --configuration $Configuration --output $OutputPath
+    & $dotnet test $Project --configuration $Configuration
 
     if ($LASTEXITCODE -ne 0) {
         throw "dotnet test failed with exit code $LASTEXITCODE"
@@ -87,8 +82,7 @@ function DotNetTest {
 function DotNetPublish {
     param([string]$Project)
 
-    $publishPath = (Join-Path $OutputPath "publish")
-    & $dotnet publish $Project --output $publishPath
+    & $dotnet publish $Project
 
     if ($LASTEXITCODE -ne 0) {
         throw "dotnet publish failed with exit code $LASTEXITCODE"
